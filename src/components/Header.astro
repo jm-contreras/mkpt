@@ -4,7 +4,7 @@ const base = import.meta.env.BASE_URL;
 <header class="site-header bg-white border-b border-stone">
   <div class="container flex items-center justify-between py-6">
     <a href={base} class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200">
-      <img src={`${base}favicon.svg`} alt="logo" class="w-12 h-12 rounded-lg" />
+      <img src={`${base}/favicon.svg`} alt="logo" class="w-12 h-12 rounded-lg" />
       <div>
         <div class="text-lg font-heading font-semibold">Morgan Kelley</div>
         <div class="text-sm text-slate">Virtual Trainer & Nutrition Coach</div>
@@ -13,14 +13,14 @@ const base = import.meta.env.BASE_URL;
 
     <nav class="hidden md:flex items-center gap-8">
       <a href={base} class="font-medium">Home</a>
-      <a href={`${base}about`} class="font-medium">About</a>
-      <a href={`${base}services`} class="font-medium">Services</a>
-      <a href={`${base}book`} class="font-medium">Book</a>
-      <a href={`${base}contact`} class="px-6 py-2.5 bg-sage text-white rounded-lg font-medium hover:bg-sage-dark transition-colors duration-200">Contact</a>
+      <a href={`${base}/about`} class="font-medium">About</a>
+      <a href={`${base}/services`} class="font-medium">Services</a>
+      <a href={`${base}/book`} class="font-medium">Book</a>
+      <a href={`${base}/contact`} class="px-6 py-2.5 bg-sage text-white rounded-lg font-medium hover:bg-sage-dark transition-colors duration-200">Contact</a>
     </nav>
 
     <div class="md:hidden">
-      <a href={`${base}book`} class="px-5 py-2.5 bg-sage text-white rounded-lg font-medium text-sm hover:bg-sage-dark transition-colors duration-200">Book</a>
+      <a href={`${base}/book`} class="px-5 py-2.5 bg-sage text-white rounded-lg font-medium text-sm hover:bg-sage-dark transition-colors duration-200">Book</a>
     </div>
   </div>
 </header>
