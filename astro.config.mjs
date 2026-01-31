@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'http://localhost:3000'
+  site: 'https://jm-contreras.github.io',
+  base: '/mkpt'
 });
