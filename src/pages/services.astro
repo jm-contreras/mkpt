@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import TestimonialPlaceholder from '../components/TestimonialPlaceholder.astro';
 import services from '../data/services.js';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout>
   <Header slot="header" />
@@ -54,7 +55,7 @@ import services from '../data/services.js';
   <TestimonialPlaceholder />
 
   <div class="py-12 text-center">
-    <a href="/book" class="btn-primary text-lg !text-white">Book a Free Consultation</a>
+    <a href={`${base}book`} class="btn-primary text-lg !text-white">Book a Free Consultation</a>
   </div>
 
   <Footer slot="footer" />

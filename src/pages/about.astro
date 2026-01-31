@@ -6,6 +6,7 @@ import { frontmatter } from '../content/pages/about.md';
 import Content from '../content/pages/about.md';
 import AboutCTA from '../components/AboutCTA.astro';
 const pageTitle = frontmatter?.title ?? 'Hey, I\'m Morgan.';
+const base = import.meta.env.BASE_URL;
 
 ---
 <Layout>
@@ -14,7 +15,7 @@ const pageTitle = frontmatter?.title ?? 'Hey, I\'m Morgan.';
   <section class="py-8 md:py-12">
     <div class="grid gap-12 md:grid-cols-2 items-start">
       <div>
-        <img src="/images/about.png" alt="Morgan Kelley" class="w-full rounded-2xl shadow-lg" />
+        <img src={`${base}images/about.png`} alt="Morgan Kelley" class="w-full rounded-2xl shadow-lg" />
       </div>
       <div class="text-slate space-y-6 content">
         <h1 class="font-heading text-charcoal">{pageTitle}</h1>

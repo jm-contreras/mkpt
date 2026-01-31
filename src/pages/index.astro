@@ -8,6 +8,7 @@ import ServiceCard from '../components/ServiceCard.astro';
 import TestimonialPlaceholder from '../components/TestimonialPlaceholder.astro';
 import home from '../data/home.js';
 import services from '../data/services.js';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout>
   <Header slot="header" />
@@ -24,11 +25,11 @@ import services from '../data/services.js';
       <div class="mt-10 grid gap-6 md:grid-cols-3">
         {/* First two services with standard styling */}
         {services.slice(0,2).map((s) => (
-          <ServiceCard title={s.title} desc={s.desc} link={`/services#${s.id}`} />
+          <ServiceCard title={s.title} desc={s.desc} link={`${base}services#${s.id}`} />
         ))}
 
         {/* Featured combo service with gradient */}
-        <a href={`/services#${services[2].id}`} class="block no-underline group">
+        <a href={`${base}services#${services[2].id}`} class="block no-underline group">
           <article class="bg-gradient-to-br from-sage to-sage-dark text-white rounded-xl p-8 hover:shadow-2xl transition-all duration-300 h-full relative">
             <span class="absolute top-4 right-4 text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Most Popular</span>
             <h3 class="font-heading text-white pr-20">{services[2].title}</h3>
@@ -40,7 +41,7 @@ import services from '../data/services.js';
 
     <TestimonialPlaceholder />
 
-    <CTA title="Book a Free Consultation" href="/book" />
+    <CTA title="Book a Free Consultation" href={`${base}book`} />
   </div>
   <Footer slot="footer" />
 </Layout>
