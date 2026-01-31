@@ -1,0 +1,16 @@
+---
+const { title, desc, link } = Astro.props;
+---
+{link ? (
+  <a href={link} class="block no-underline group">
+    <article class="bg-white border border-stone rounded-xl p-8 hover:shadow-lg hover:border-sage-light transition-all duration-300 h-full">
+      <h3 class="font-heading text-charcoal group-hover:text-sage transition-colors duration-300">{title}</h3>
+      <p class="mt-4 text-slate leading-relaxed">{desc}</p>
+    </article>
+  </a>
+) : (
+  <article class="bg-white border border-stone rounded-xl p-8 h-full">
+    <h3 class="font-heading text-charcoal">{title}</h3>
+    <p class="mt-4 text-slate leading-relaxed">{desc}</p>
+  </article>
+)}

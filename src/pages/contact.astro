@@ -1,0 +1,20 @@
+---
+import Layout from '../components/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+<Layout>
+  <Header slot="header" />
+
+  <section>
+    <h1 class="font-heading mb-6">Contact</h1>
+    <p class="text-lg text-slate leading-relaxed max-w-2xl">Have questions or want to start? Send a message and Morgan will get back to you.</p>
+
+    <div class="mt-12">
+      <ContactForm />
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

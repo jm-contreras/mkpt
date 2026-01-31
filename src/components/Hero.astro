@@ -1,0 +1,18 @@
+---
+import home from '../data/home.js';
+const { hero } = home || {};
+---
+<section class="py-16 md:py-24">
+  <div class="grid gap-12 md:grid-cols-2 items-center">
+    <div>
+      <h1 class="font-heading leading-tight">{hero?.title ?? 'Train smarter. Eat well.'}</h1>
+      <p class="mt-6 text-lg text-slate leading-relaxed">{hero?.subtitle ?? 'Personalized virtual training + nutrition coaching.'}</p>
+      <div class="mt-8">
+        <a href="/book" class="btn-primary text-lg">{hero?.cta ?? 'Book a Free Consultation'}</a>
+      </div>
+    </div>
+    <div>
+      <img src="/images/home.png" alt="hero" class="w-full rounded-2xl shadow-lg" />
+    </div>
+  </div>
+</section>

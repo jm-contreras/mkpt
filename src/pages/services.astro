@@ -1,0 +1,61 @@
+---
+import Layout from '../components/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialPlaceholder from '../components/TestimonialPlaceholder.astro';
+import services from '../data/services.js';
+---
+<Layout>
+  <Header slot="header" />
+
+  <section class="py-8 md:py-12">
+    <h1 class="font-heading mb-10 text-center">Services</h1>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <section id="nutrition-coaching" class="bg-white border border-stone rounded-xl p-6">
+        <h2 class="font-heading">Nutrition Coaching</h2>
+        <p class="mt-3 text-slate leading-relaxed">Dial in your fueling without the guesswork. I'll build you a custom macro plan based on your goals, preferences, and lifestyle—then we'll refine it together through weekly check-ins. This isn't about perfection; it's about building habits that actually stick.</p>
+        <h3 class="mt-5 font-semibold text-charcoal">What's included:</h3>
+        <ul class="list-disc ml-5 mt-2 text-slate space-y-0.5 text-sm">
+          <li>Custom macro targets and recipe ideas</li>
+          <li>Weekly check-ins and adjustments</li>
+          <li>Habit tracking and accountability</li>
+          <li>Access to my full resource library</li>
+        </ul>
+      </section>
+
+      <section id="virtual-fitness-coaching" class="bg-white border border-stone rounded-xl p-6">
+        <h2 class="font-heading">Virtual Fitness Coaching</h2>
+        <p class="mt-3 text-slate leading-relaxed">Structured strength and conditioning programming designed for you—your goals, your equipment, your schedule. You'll train through an app with built-in tracking, and I'll review your form via video so you're never guessing whether you're doing it right.</p>
+        <h3 class="mt-5 font-semibold text-charcoal">What's included:</h3>
+        <ul class="list-disc ml-5 mt-2 text-slate space-y-0.5 text-sm">
+          <li>Personalized programming with regular updates</li>
+          <li>Video form feedback (async)</li>
+          <li>App-based workouts with progress tracking</li>
+          <li>Monthly 1:1 virtual session</li>
+        </ul>
+      </section>
+
+      <section id="nutrition-plus-fitness" class="bg-gradient-to-br from-sage to-sage-dark text-white rounded-xl p-6 relative">
+        <span class="absolute top-4 right-4 text-xs font-semibold bg-white/20 px-3 py-1.5 rounded-full">Most Popular</span>
+        <h2 class="font-heading text-white pr-24">Nutrition + Fitness Coaching</h2>
+        <p class="mt-3 text-white/90 leading-relaxed">Training and nutrition work best when they work together. This plan combines everything from both services, plus more frequent strategy calls so we can fine-tune your approach as you progress.</p>
+        <h3 class="mt-5 font-semibold text-white">What's included:</h3>
+        <ul class="list-disc ml-5 mt-2 text-white/90 space-y-0.5 text-sm">
+          <li>Everything in Nutrition Coaching and Virtual Fitness Coaching</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Priority messaging support</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <TestimonialPlaceholder />
+
+  <div class="py-12 text-center">
+    <a href="/book" class="btn-primary text-lg !text-white">Book a Free Consultation</a>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>

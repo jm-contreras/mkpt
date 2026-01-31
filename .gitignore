@@ -1,0 +1,7 @@
+node_modules/
+.turbo/
+.cache/
+dist/
+.DS_Store
+/.idea
+/.vscode
