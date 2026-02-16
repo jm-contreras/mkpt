@@ -11,6 +11,7 @@ const base = import.meta.env.BASE_URL;
       </div>
     </a>
 
+    <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8">
       <a href={base} class="font-medium">Home</a>
       <a href={`${base}/about`} class="font-medium">About</a>
@@ -19,8 +20,54 @@ const base = import.meta.env.BASE_URL;
       <a href={`${base}/contact`} class="px-6 py-2.5 bg-sage text-white rounded-lg font-medium hover:bg-sage-dark transition-colors duration-200">Contact</a>
     </nav>
 
-    <div class="md:hidden">
-      <a href={`${base}/book`} class="px-5 py-2.5 bg-sage text-white rounded-lg font-medium text-sm hover:bg-sage-dark transition-colors duration-200">Book</a>
-    </div>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden p-2 hover:bg-stone/10 rounded-lg transition-colors" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
   </div>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-stone">
+    <div class="container py-4 flex flex-col gap-2">
+      <a href={base} class="py-3 px-4 hover:bg-stone/10 rounded-lg font-medium transition-colors">Home</a>
+      <a href={`${base}/about`} class="py-3 px-4 hover:bg-stone/10 rounded-lg font-medium transition-colors">About</a>
+      <a href={`${base}/services`} class="py-3 px-4 hover:bg-stone/10 rounded-lg font-medium transition-colors">Services</a>
+      <a href={`${base}/book`} class="py-3 px-4 hover:bg-stone/10 rounded-lg font-medium transition-colors">Book</a>
+      <a href={`${base}/contact`} class="py-3 px-4 bg-sage text-white rounded-lg font-medium hover:bg-sage-dark transition-colors text-center">Contact</a>
+    </div>
+  </nav>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  menuButton?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.contains('hidden');
+
+    if (isHidden) {
+      mobileMenu?.classList.remove('hidden');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    } else {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>
